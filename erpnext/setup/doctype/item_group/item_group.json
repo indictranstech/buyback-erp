@@ -1,5 +1,5 @@
 {
-  "allow_import": 1, 
+ "allow_import": 1, 
  "allow_rename": 1, 
  "autoname": "field:item_group_name", 
  "creation": "2013-03-28 10:35:29", 
@@ -190,7 +190,7 @@
  "in_create": 1, 
  "issingle": 0, 
  "max_attachments": 3, 
- "modified": "2014-08-20 17:48:34.489750", 
+ "modified": "2015-01-31 13:42:10.309624", 
  "modified_by": "Administrator", 
  "module": "Setup", 
  "name": "Item Group", 
@@ -264,6 +264,23 @@
    "read": 1, 
    "report": 1, 
    "role": "Accounts User"
+  }, 
+  {
+   "create": 1, 
+   "permlevel": 0, 
+   "read": 1, 
+   "report": 1, 
+   "role": "MSE", 
+   "write": 1
+  }, 
+  {
+   "create": 1, 
+   "delete": 1, 
+   "permlevel": 0, 
+   "read": 1, 
+   "report": 1, 
+   "role": "Slot Representative", 
+   "write": 1
   }
  ], 
  "search_fields": "parent_item_group"

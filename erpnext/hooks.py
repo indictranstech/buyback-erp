@@ -39,6 +39,16 @@ has_permission = {
 
 
 doc_events = {
+	"Buy Back Requisition": {
+		"validate": "samsungapp.samsungapp.doctype.buy_back_requisition.buy_back_requisition.test",
+		"on_submit": "samsungapp.samsungapp.doctype.buy_back_requisition.buy_back_requisition.save"
+		# "on_submit": "erpnext.home.update_feed"
+	},
+	"Purchase Receipt": {
+		"validate": "samsungapp.samsungapp.doctype.buy_back_requisition.custom_methods.generate_pin"
+		# "validate": "samsungapp.samsungapp.doctype.buy_back_requisition.custom_methods.send_email"
+		# "on_submit": "erpnext.home.update_feed"
+	},
 	"*": {
 		"on_update": "erpnext.home.update_feed",
 		"on_submit": "erpnext.home.update_feed"
