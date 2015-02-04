@@ -40,13 +40,16 @@ has_permission = {
 
 doc_events = {
 	"Buy Back Requisition": {
-		"validate": "samsungapp.samsungapp.doctype.buy_back_requisition.buy_back_requisition.test",
-		"on_submit": "samsungapp.samsungapp.doctype.buy_back_requisition.buy_back_requisition.save"
+		"on_submit": ["samsungapp.samsungapp.doctype.buy_back_requisition.buy_back_requisition.save","samsungapp.samsungapp.doctype.buy_back_requisition.buy_back_requisition.send_to_sms"]
+	},
+	"Slot Cashier": {
+		"on_submit":["samsungapp.samsungapp.doctype.slot_cashier.slot_cashier.send_reedemed_email","samsungapp.samsungapp.doctype.slot_cashier.slot_cashier.send_redeemed_sms"]
+		# "validate": "samsungapp.samsungapp.doctype.slot_cashier.slot_cashier.send_redeemed_sms"
 		# "on_submit": "erpnext.home.update_feed"
 	},
 	"Purchase Receipt": {
-		"validate": "samsungapp.samsungapp.doctype.buy_back_requisition.custom_methods.generate_pin"
-		# "validate": "samsungapp.samsungapp.doctype.buy_back_requisition.custom_methods.send_email"
+		"on_submit": "samsungapp.samsungapp.doctype.buy_back_requisition.custom_methods.generate_pin"
+		# "validate": "samsungapp.samsungapp.doctype.buy_back_requisition.custom_methods.send_pin_sms"
 		# "on_submit": "erpnext.home.update_feed"
 	},
 	"*": {

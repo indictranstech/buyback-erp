@@ -186,7 +186,7 @@
  ], 
  "icon": "icon-user", 
  "idx": 1, 
- "modified": "2015-01-31 13:03:02.762562", 
+ "modified": "2015-02-03 12:49:10.996131", 
  "modified_by": "Administrator", 
  "module": "Buying", 
  "name": "Supplier", 
@@ -261,6 +261,14 @@
    "read": 1, 
    "report": 1, 
    "role": "Slot Representative", 
+   "write": 1
+  }, 
+  {
+   "create": 1, 
+   "delete": 1, 
+   "permlevel": 0, 
+   "read": 1, 
+   "role": "MSE", 
    "write": 1
   }
  ], 

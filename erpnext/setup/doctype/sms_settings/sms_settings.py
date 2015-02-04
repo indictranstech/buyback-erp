@@ -47,6 +47,7 @@ def get_contact_number(contact_name, value, key):
 
 @frappe.whitelist()
 def send_sms(receiver_list, msg, sender_name = ''):
+	frappe.errprint("in the sms setting")
 
 	import json
 	if isinstance(receiver_list, basestring):
@@ -71,13 +72,16 @@ def send_sms(receiver_list, msg, sender_name = ''):
 def send_via_gateway(arg):
 	ss = frappe.get_doc('SMS Settings', 'SMS Settings')
 	args = {ss.message_parameter : arg.get('message')}
+	frappe.errprint(args)
 	for d in ss.get("static_parameter_details"):
 		args[d.parameter] = d.value
+	frappe.errprint(ss.sms_gateway_url)
 
 	resp = []
 	for d in arg.get('receiver_list'):
 		args[ss.receiver_parameter] = d
-		resp.append(send_request(ss.sms_gateway_url, args))
+		r=resp.append(send_request(ss.sms_gateway_url, args))
+		frappe.errprint(r)	
 
 	return resp
 
@@ -86,12 +90,16 @@ def send_via_gateway(arg):
 def send_request(gateway_url, args):
 	import httplib, urllib
 	server, api_url = scrub_gateway_url(gateway_url)
+	frappe.errprint(api_url)
+	frappe.errprint(server)
+	frappe.errprint(api_url + urllib.urlencode(args))
 	conn = httplib.HTTPConnection(server)  # open connection
 	headers = {}
 	headers['Accept'] = "text/plain, text/html, */*"
 	conn.request('GET', api_url + urllib.urlencode(args), headers = headers)    # send request
 	resp = conn.getresponse()     # get response
 	resp = resp.read()
+	# frappe.errprint(resp)
 	return resp
 
 # Split gateway url to server and api url

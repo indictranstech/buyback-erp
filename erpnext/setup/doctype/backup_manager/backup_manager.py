@@ -63,7 +63,6 @@ def send_email(success, service_name, error_status=None):
 		message ="""<h3>Backup Uploaded Successfully</h3><p>Hi there, this is just to inform you 
 		that your backup was successfully uploaded to your %s account. So relax!</p>
 		""" % service_name
-
 	else:
 		subject = "[Warning] Backup Upload Failed"
 		message ="""<h3>Backup Upload Failed</h3><p>Oops, your automated backup to %s

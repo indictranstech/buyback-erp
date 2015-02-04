@@ -40,6 +40,7 @@ cur_frm.cscript.refresh = function(doc, dt, dn) {
 	}
 }
 
+
 cur_frm.cscript.validate = function(doc, dt, dn) {
 	if(doc.lead_name) frappe.model.clear_doc("Lead", doc.lead_name);
 }
@@ -93,4 +94,17 @@ cur_frm.fields_dict['default_price_list'].get_query = function(doc, cdt, cdn) {
 	return{
 		filters:{'selling': 1}
 	}
+}
+
+cur_frm.cscript.email_id = function(doc, dt, dn) {
+	console.log("in the email id")
+	console.log(doc.email_id);
+	var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+	check=re.test(doc.email_id)
+	console.log(check)
+    if(check==false)
+    {
+    	msgprint("Please Enter Correct Email ID ");
+    }
+   
 }
