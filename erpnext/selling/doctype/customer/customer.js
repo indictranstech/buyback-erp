@@ -97,8 +97,6 @@ cur_frm.fields_dict['default_price_list'].get_query = function(doc, cdt, cdn) {
 }
 
 cur_frm.cscript.email_id = function(doc, dt, dn) {
-	// console.log("in the email id")
-	// console.log(doc.email_id);
 	var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 	check=re.test(doc.email_id)
 	if(check==false)

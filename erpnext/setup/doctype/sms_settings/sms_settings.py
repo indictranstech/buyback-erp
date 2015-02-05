@@ -66,23 +66,23 @@ def send_sms(receiver_list, msg, sender_name = ''):
 	if frappe.db.get_value('SMS Settings', None, 'sms_gateway_url'):
 		ret = send_via_gateway(arg)
 		# msgprint(ret)
-		msgprint(_("message Sent"))
+		msgprint(_("Message Sent"))
 	else:
 		msgprint(_("Please Update SMS Settings"))
 
 def send_via_gateway(arg):
 	ss = frappe.get_doc('SMS Settings', 'SMS Settings')
 	args = {ss.message_parameter : arg.get('message')}
-	frappe.errprint(args)
+	
 	for d in ss.get("static_parameter_details"):
 		args[d.parameter] = d.value
-	frappe.errprint(ss.sms_gateway_url)
+	
 
 	resp = []
 	for d in arg.get('receiver_list'):
 		args[ss.receiver_parameter] = d
 		r=resp.append(send_request(ss.sms_gateway_url, args))
-		frappe.errprint(r)	
+		
 
 	return resp
 

@@ -54,7 +54,7 @@ class SMSCenter(Document):
 		self.receiver_list = rec_list
 
 	def get_receiver_nos(self):
-		frappe.errprint("in the get_receiver_nos")
+		# frappe.errprint("in the get_receiver_nos")
 		receiver_nos = []
 		if self.receiver_list:
 			for d in self.receiver_list.split('\n'):
