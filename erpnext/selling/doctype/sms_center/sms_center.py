@@ -69,16 +69,16 @@ class SMSCenter(Document):
 		return receiver_nos
 
 	def send_sms(self):
-		frappe.errprint("in the send sms")
+		# frappe.errprint("in the send sms")
 		receiver_list = []
 		if not self.message:
-			frappe.errprint("in self.message")
+			# frappe.errprint("in self.message")
 			msgprint(_("Please enter message before sending"))
 		else:
-			frappe.errprint("in the else")
+			# frappe.errprint("in the else")
 			receiver_list = self.get_receiver_nos()
-			frappe.errprint(receiver_list)
+			# frappe.errprint(receiver_list)
 		if receiver_list:
-			frappe.errprint("in the receiver_list sms")
+			# frappe.errprint("in the receiver_list sms")
 			send_sms(receiver_list, cstr(self.message))
 

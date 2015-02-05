@@ -65,7 +65,8 @@ def send_sms(receiver_list, msg, sender_name = ''):
 
 	if frappe.db.get_value('SMS Settings', None, 'sms_gateway_url'):
 		ret = send_via_gateway(arg)
-		msgprint(ret)
+		# msgprint(ret)
+		msgprint(_("message Sent"))
 	else:
 		msgprint(_("Please Update SMS Settings"))
 
@@ -90,9 +91,9 @@ def send_via_gateway(arg):
 def send_request(gateway_url, args):
 	import httplib, urllib
 	server, api_url = scrub_gateway_url(gateway_url)
-	frappe.errprint(api_url)
-	frappe.errprint(server)
-	frappe.errprint(api_url + urllib.urlencode(args))
+	# frappe.errprint(api_url)
+	# frappe.errprint(server)
+	# frappe.errprint(api_url + urllib.urlencode(args))
 	conn = httplib.HTTPConnection(server)  # open connection
 	headers = {}
 	headers['Accept'] = "text/plain, text/html, */*"

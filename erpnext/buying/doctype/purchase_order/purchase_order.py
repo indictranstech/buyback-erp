@@ -205,7 +205,6 @@ def set_missing_values(source, target):
 
 @frappe.whitelist()
 def make_purchase_receipt(source_name, target_doc=None):
-	# frappe.errprint("in the make_purchase_receipt ")
 	new_purchase_receipt(source_name,target_doc=None)
 
 	# def update_item(obj, target, source_parent):
@@ -239,11 +238,8 @@ def make_purchase_receipt(source_name, target_doc=None):
 	# }, target_doc, set_missing_values)
 
 	# return doc
-
+#new function for creating sumitted purchase receipt
 def new_purchase_receipt(source_name,target_doc=None):
-	frappe.errprint("in the new_purchase_receipt ")
-	# po_doclist = source_name.get("po_details")
-	# frappe.errprint(po_doclist)
 	def update_item(obj, target, source_parent):
 		target.qty = flt(obj.qty) - flt(obj.received_qty)
 		target.stock_qty = (flt(obj.qty) - flt(obj.received_qty)) * flt(obj.conversion_factor)
@@ -273,31 +269,10 @@ def new_purchase_receipt(source_name,target_doc=None):
 			"add_if_empty": True
 		}
 	}, target_doc, set_missing_values)
-	frappe.errprint(type(doc))
-	frappe.errprint(doc.purchase_receipt_details)
-
 	pr = doc.save()
 	doc.submit()
-	frappe.errprint(pr)
-	# pr.naming_series="PREC-BB-"
-	# pr.supplier=doc.supplier
-	# prc = po.append('po_details', {})
-	# prc.item_code=BuyBackRequisition.item_code
-	# prc.schedule_date=nowdate()
-	# prc.rate=BuyBackRequisition.offered_price
-	# pr.save()
-
-
-
-
-
-
-
-
-
-
-
-
+	msgprint(_("{0} is Created Successfully.").format(doc.name))
+	
 
 @frappe.whitelist()
 def make_purchase_invoice(source_name, target_doc=None):

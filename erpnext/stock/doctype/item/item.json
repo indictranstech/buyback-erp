@@ -101,14 +101,6 @@
    "read_only": 0
   }, 
   {
-   "fieldname": "basic_price", 
-   "fieldtype": "Currency", 
-   "label": "Basic Price", 
-   "options": "currency", 
-   "permlevel": 0, 
-   "precision": ""
-  }, 
-  {
    "fieldname": "column_break0", 
    "fieldtype": "Column Break", 
    "permlevel": 0, 
@@ -832,7 +824,7 @@
  "icon": "icon-tag", 
  "idx": 1, 
  "max_attachments": 1, 
- "modified": "2015-01-31 13:29:52.219823", 
+ "modified": "2015-02-05 13:12:00.881769", 
  "modified_by": "Administrator", 
  "module": "Stock", 
  "name": "Item", 
