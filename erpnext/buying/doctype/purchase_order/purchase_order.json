@@ -53,13 +53,14 @@
   {
    "fieldname": "buy_back_requisition_ref", 
    "fieldtype": "Link", 
+   "in_filter": 1, 
    "in_list_view": 1, 
    "label": "Buy Back Requisition Ref", 
    "options": "Buy Back Requisition", 
    "permlevel": 0, 
    "precision": "", 
    "read_only": 1, 
-   "search_index": 1, 
+   "search_index": 0, 
    "set_only_once": 0
   }, 
   {
@@ -790,7 +791,7 @@
  "icon": "icon-file-text", 
  "idx": 1, 
  "is_submittable": 1, 
- "modified": "2015-02-04 13:24:30.876786", 
+ "modified": "2015-02-09 11:16:39.739478", 
  "modified_by": "Administrator", 
  "module": "Buying", 
  "name": "Purchase Order", 
@@ -866,24 +867,24 @@
    "permlevel": 0, 
    "read": 1, 
    "report": 0, 
-   "role": "Slot Representative", 
+   "role": "Collection Officer", 
    "submit": 0, 
    "write": 0
   }, 
   {
    "amend": 0, 
    "cancel": 0, 
-   "create": 0, 
+   "create": 1, 
    "delete": 0, 
    "permlevel": 0, 
    "read": 1, 
-   "role": "MSE", 
+   "role": "MPO", 
    "submit": 1, 
    "write": 1
   }
  ], 
  "read_only_onload": 1, 
- "search_fields": "status, transaction_date, supplier,grand_total,naming_series", 
+ "search_fields": "buy_back_requisition_ref,status, transaction_date, supplier,grand_total,naming_series", 
  "sort_field": "modified", 
  "sort_order": "DESC", 
  "title_field": ""

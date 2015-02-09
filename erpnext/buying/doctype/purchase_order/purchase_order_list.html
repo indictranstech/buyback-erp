@@ -21,6 +21,11 @@
 					data-filter="per_received,=,100|status,!=,Stopped">
 					<i class="icon-ok-sign"></i></span>
 			{% } %}
+			{% if(doc.buy_back_requisition_ref !="" ) { %}
+				<span class="filterable"
+					data-filter="buy_back_requisition_ref,!=,"""> 
+					<i class="text-ellipsis"></i>{%= doc.buy_back_requisition_ref %}</span>
+			{% } %}
 		</div>
 	</div>
 	<div class="col-xs-1 text-right">
