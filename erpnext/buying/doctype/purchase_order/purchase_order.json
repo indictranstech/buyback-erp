@@ -64,6 +64,14 @@
    "set_only_once": 0
   }, 
   {
+   "fieldname": "warehouse", 
+   "fieldtype": "Link", 
+   "label": "warehouse", 
+   "options": "Warehouse", 
+   "permlevel": 0, 
+   "precision": ""
+  }, 
+  {
    "fieldname": "address_display", 
    "fieldtype": "Small Text", 
    "hidden": 1, 
@@ -791,7 +799,7 @@
  "icon": "icon-file-text", 
  "idx": 1, 
  "is_submittable": 1, 
- "modified": "2015-02-09 11:16:39.739478", 
+ "modified": "2015-02-10 08:59:17.766888", 
  "modified_by": "Administrator", 
  "module": "Buying", 
  "name": "Purchase Order", 
@@ -861,6 +869,7 @@
   }, 
   {
    "amend": 0, 
+   "apply_user_permissions": 1, 
    "cancel": 0, 
    "create": 0, 
    "delete": 0, 
@@ -868,11 +877,13 @@
    "read": 1, 
    "report": 0, 
    "role": "Collection Officer", 
+   "set_user_permissions": 1, 
    "submit": 0, 
    "write": 0
   }, 
   {
    "amend": 0, 
+   "apply_user_permissions": 0, 
    "cancel": 0, 
    "create": 1, 
    "delete": 0, 

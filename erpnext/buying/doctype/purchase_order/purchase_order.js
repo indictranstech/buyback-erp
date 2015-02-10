@@ -25,9 +25,11 @@ erpnext.buying.PurchaseOrderController = erpnext.buying.BuyingController.extend(
 			if(flt(doc.per_received, 2) < 100)
 				cur_frm.add_custom_button(__('Make Purchase Receipt'),
 					this.make_purchase_receipt, frappe.boot.doctype_icons["Purchase Receipt"]);
+			if (!in_list(user_roles, "Collection Officer")){
 			if(flt(doc.per_billed, 2) < 100)
 				cur_frm.add_custom_button(__('Make Invoice'), this.make_purchase_invoice,
-					frappe.boot.doctype_icons["Purchase Invoice"]);
+					frappe.boot.doctype_icons["Purchase Invoice"],false);
+		}
 			if(flt(doc.per_billed, 2) < 100 || doc.per_received < 100)
 				cur_frm.add_custom_button(__('Stop'), cur_frm.cscript['Stop Purchase Order'],
 					"icon-exclamation", "btn-default");
