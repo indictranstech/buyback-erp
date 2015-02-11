@@ -103,6 +103,7 @@ cur_frm.cscript.email_id = function(doc, dt, dn) {
     {
     	cur_frm.set_value("email_id", '')
     	msgprint("Please Enter Correct Email ID ");
+    	throw "Please Enter Correct Email ID!"
     }
    
 }
