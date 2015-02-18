@@ -3,6 +3,20 @@
 
 cur_frm.cscript.onload = function(doc, dt, dn) {
 	cur_frm.cscript.load_defaults(doc, dt, dn);
+	cur_frm.cscript.hide_fields(doc, dt, dn);
+}
+
+cur_frm.cscript.hide_fields= function(doc, dt, dn) {
+	if (in_list(user_roles, "MPO"))
+	{
+    hide_field('address_contacts');
+    hide_field('communication_history');
+    hide_field('sales_team_section_break');
+    hide_field('customer_type');
+    hide_field('lead_name');
+    hide_field('customer_group');
+    hide_field('territory');
+	}
 }
 
 cur_frm.cscript.load_defaults = function(doc, dt, dn) {

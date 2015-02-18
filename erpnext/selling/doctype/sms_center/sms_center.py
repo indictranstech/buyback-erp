@@ -72,7 +72,7 @@ class SMSCenter(Document):
 		# frappe.errprint("in the send sms")
 		receiver_list = []
 		if not self.message:
-			# frappe.errprint("in self.message")
+			frappe.errprint("in self.message")
 			msgprint(_("Please enter message before sending"))
 		else:
 			# frappe.errprint("in the else")

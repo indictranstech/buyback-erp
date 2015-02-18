@@ -62,7 +62,7 @@ def send_sms(receiver_list, msg, sender_name = ''):
 		'message'		: msg,
 		'sender_name'	: sender_name or get_sender_name()
 	}
-
+	# frappe.errprint(sms_gateway_url)
 	if frappe.db.get_value('SMS Settings', None, 'sms_gateway_url'):
 		ret = send_via_gateway(arg)
 		# msgprint(ret)
