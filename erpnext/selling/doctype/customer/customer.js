@@ -16,6 +16,7 @@ cur_frm.cscript.hide_fields= function(doc, dt, dn) {
     hide_field('lead_name');
     hide_field('customer_group');
     hide_field('territory');
+    hide_field('more_info');
 	}
 }
 
