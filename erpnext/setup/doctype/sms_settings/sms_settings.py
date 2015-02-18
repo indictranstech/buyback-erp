@@ -47,7 +47,7 @@ def get_contact_number(contact_name, value, key):
 
 @frappe.whitelist()
 def send_sms(receiver_list, msg, sender_name = ''):
-	frappe.errprint("in the sms setting")
+	# frappe.errprint("in the sms setting")
 
 	import json
 	if isinstance(receiver_list, basestring):
