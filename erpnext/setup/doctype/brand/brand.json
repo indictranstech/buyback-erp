@@ -33,7 +33,7 @@
  "icon": "icon-certificate", 
  "idx": 1, 
  "in_dialog": 0, 
- "modified": "2015-01-31 13:43:01.791276", 
+ "modified": "2015-02-19 12:07:37.125680", 
  "modified_by": "Administrator", 
  "module": "Setup", 
  "name": "Brand", 
@@ -93,24 +93,6 @@
    "read": 1, 
    "report": 1, 
    "role": "Accounts User"
-  }, 
-  {
-   "create": 1, 
-   "delete": 1, 
-   "permlevel": 0, 
-   "read": 1, 
-   "report": 1, 
-   "role": "MSE", 
-   "write": 1
-  }, 
-  {
-   "create": 1, 
-   "delete": 1, 
-   "permlevel": 0, 
-   "read": 1, 
-   "report": 1, 
-   "role": "Slot Representative", 
-   "write": 1
   }
  ]
 }

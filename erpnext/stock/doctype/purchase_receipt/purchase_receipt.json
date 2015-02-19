@@ -101,6 +101,13 @@
    "precision": ""
   }, 
   {
+   "fieldname": "warehouse", 
+   "fieldtype": "Data", 
+   "label": "Warehouse", 
+   "permlevel": 0, 
+   "precision": ""
+  }, 
+  {
    "fieldname": "column_break1", 
    "fieldtype": "Column Break", 
    "oldfieldtype": "Column Break", 
@@ -784,7 +791,7 @@
  "icon": "icon-truck", 
  "idx": 1, 
  "is_submittable": 1, 
- "modified": "2015-02-17 08:52:46.336095", 
+ "modified": "2015-02-19 12:21:18.647080", 
  "modified_by": "Administrator", 
  "module": "Stock", 
  "name": "Purchase Receipt", 
@@ -877,15 +884,16 @@
    "write": 1
   }, 
   {
-   "amend": 1, 
-   "apply_user_permissions": 0, 
-   "cancel": 1, 
+   "amend": 0, 
+   "apply_user_permissions": 1, 
+   "cancel": 0, 
    "create": 1, 
-   "delete": 1, 
+   "delete": 0, 
    "permlevel": 0, 
    "read": 1, 
-   "report": 1, 
+   "report": 0, 
    "role": "Collection Officer", 
+   "set_user_permissions": 1, 
    "submit": 1, 
    "write": 1
   }

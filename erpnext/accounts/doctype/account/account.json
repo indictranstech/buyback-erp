@@ -210,7 +210,7 @@
  "icon": "icon-money", 
  "idx": 1, 
  "in_create": 1, 
- "modified": "2015-01-31 13:48:41.659549", 
+ "modified": "2015-02-19 12:07:28.673677", 
  "modified_by": "Administrator", 
  "module": "Accounts", 
  "name": "Account", 
@@ -326,24 +326,6 @@
    "role": "Accounts User", 
    "submit": 0, 
    "write": 0
-  }, 
-  {
-   "create": 1, 
-   "delete": 1, 
-   "permlevel": 0, 
-   "read": 1, 
-   "report": 1, 
-   "role": "MSE", 
-   "write": 1
-  }, 
-  {
-   "create": 1, 
-   "delete": 1, 
-   "permlevel": 0, 
-   "read": 1, 
-   "report": 1, 
-   "role": "Slot Representative", 
-   "write": 1
   }
  ], 
  "search_fields": "group_or_ledger"

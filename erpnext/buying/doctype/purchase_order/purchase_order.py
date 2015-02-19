@@ -250,6 +250,9 @@ def new_purchase_receipt(source_name,target_doc=None):
 	doc = get_mapped_doc("Purchase Order", source_name,	{
 		"Purchase Order": {
 			"doctype": "Purchase Receipt",
+			"field_map": {
+				"warehouse": "warehouse",
+			},
 			"validation": {
 				"docstatus": ["=", 1],
 			}
