@@ -42,10 +42,8 @@ doc_events = {
 	"Buy Back Requisition": {
 		"on_submit": ["samsungapp.samsungapp.doctype.buy_back_requisition.buy_back_requisition.save","samsungapp.samsungapp.doctype.buy_back_requisition.buy_back_requisition.send_to_sms"]
 	},
-	"Slot Cashier": {
-		"on_submit":["samsungapp.samsungapp.doctype.slot_cashier.slot_cashier.send_reedemed_email","samsungapp.samsungapp.doctype.slot_cashier.slot_cashier.send_redeemed_sms"]
-		# "validate": "samsungapp.samsungapp.doctype.slot_cashier.slot_cashier.send_redeemed_sms"
-		# "on_submit": "erpnext.home.update_feed"
+	"Redemption Form": {
+		"on_submit":["samsungapp.samsungapp.doctype.redemption_form.redemption_form.send_reedemed_email","samsungapp.samsungapp.doctype.redemption_form.redemption_form.send_redeemed_sms"]
 	},
 	"Purchase Receipt": {
 		"on_submit": "samsungapp.samsungapp.doctype.buy_back_requisition.custom_methods.generate_pin"
