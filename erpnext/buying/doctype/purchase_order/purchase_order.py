@@ -205,7 +205,7 @@ def set_missing_values(source, target):
 
 @frappe.whitelist()
 def make_purchase_receipt(source_name, target_doc=None):
-	new_purchase_receipt(source_name,target_doc=None)
+	return new_purchase_receipt(source_name,target_doc=None)
 
 	# def update_item(obj, target, source_parent):
 	# 	target.qty = flt(obj.qty) - flt(obj.received_qty)
@@ -236,7 +236,9 @@ def make_purchase_receipt(source_name, target_doc=None):
 	# 		"add_if_empty": True
 	# 	}
 	# }, target_doc, set_missing_values)
-
+	# pr = doc.save()
+	# doc.submit()
+	# msgprint(_("{0} is Created Successfully.").format(doc.name))
 	# return doc
 #new function for creating sumitted purchase receipt
 def new_purchase_receipt(source_name,target_doc=None):
@@ -251,7 +253,7 @@ def new_purchase_receipt(source_name,target_doc=None):
 		"Purchase Order": {
 			"doctype": "Purchase Receipt",
 			"field_map": {
-				"warehouse": "warehouse",
+				# "warehouse": "warehouse",
 			},
 			"validation": {
 				"docstatus": ["=", 1],
@@ -275,6 +277,8 @@ def new_purchase_receipt(source_name,target_doc=None):
 	pr = doc.save()
 	doc.submit()
 	msgprint(_("{0} is Created Successfully.").format(doc.name))
+
+	return doc
 	
 
 @frappe.whitelist()

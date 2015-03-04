@@ -13,6 +13,7 @@ cur_frm.cscript.other_fname = "other_charges";
 
 erpnext.buying.PurchaseOrderController = erpnext.buying.BuyingController.extend({
 	refresh: function(doc, cdt, cdn) {
+		console.log("refresh");
 		this._super();
 		this.frm.dashboard.reset();
 
@@ -45,11 +46,27 @@ erpnext.buying.PurchaseOrderController = erpnext.buying.BuyingController.extend(
 				cur_frm.cscript['Unstop Purchase Order'], "icon-check");
 	},
 
-	make_purchase_receipt: function() {
-		frappe.model.open_mapped_doc({
+	// make_purchase_receipt: function() {
+	// 	frappe.model.open_mapped_doc({
+	// 		method: "erpnext.buying.doctype.purchase_order.purchase_order.make_purchase_receipt",
+	// 		frm: cur_frm
+	// 	})
+	// },
+
+	//new code on 4th march for hiding make purchase receipt custom button
+	make_purchase_receipt: function(doc, cdt, cdn) {
+		var me=this
+		console.log("in the make_purchase_receipt")
+		return frappe.call({
 			method: "erpnext.buying.doctype.purchase_order.purchase_order.make_purchase_receipt",
-			frm: cur_frm
-		})
+			args: {
+			"source_name": cur_frm.doc.name
+		},
+		callback: function(r) {
+			window.location.reload();
+			}
+	});
+		
 	},
 
 	make_purchase_invoice: function() {

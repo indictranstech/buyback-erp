@@ -25,7 +25,7 @@ before_tests = "erpnext.setup.utils.before_tests"
 
 website_generators = ["Item Group", "Item", "Sales Partner"]
 
-fixtures=["Purchase Order"]
+# fixtures=["Purchase Order"]
 
 standard_queries = "Customer:erpnext.selling.doctype.customer.customer.get_customer_list"
 

@@ -66,6 +66,7 @@
   {
    "fieldname": "warehouse", 
    "fieldtype": "Link", 
+   "hidden": 1, 
    "label": "warehouse", 
    "options": "Warehouse", 
    "permlevel": 0, 
@@ -124,6 +125,28 @@
    "permlevel": 0, 
    "reqd": 1, 
    "search_index": 1
+  }, 
+  {
+   "fieldname": "imei_number", 
+   "fieldtype": "Data", 
+   "label": "IMEI No.", 
+   "permlevel": 0, 
+   "precision": ""
+  }, 
+  {
+   "fieldname": "colour", 
+   "fieldtype": "Data", 
+   "label": "Colour", 
+   "permlevel": 0, 
+   "precision": ""
+  }, 
+  {
+   "fieldname": "paper_voucher_pin", 
+   "fieldtype": "Data", 
+   "hidden": 1, 
+   "label": "Paper Voucher Pin", 
+   "permlevel": 0, 
+   "precision": ""
   }, 
   {
    "fieldname": "amended_from", 
@@ -799,7 +822,7 @@
  "icon": "icon-file-text", 
  "idx": 1, 
  "is_submittable": 1, 
- "modified": "2015-02-12 10:11:28.652900", 
+ "modified": "2015-03-04 12:29:06.269360", 
  "modified_by": "Administrator", 
  "module": "Buying", 
  "name": "Purchase Order", 
@@ -834,7 +857,7 @@
    "print": 0, 
    "read": 1, 
    "report": 0, 
-   "role": "MSE Supervisor", 
+   "role": "MPO Supervisor", 
    "set_user_permissions": 0, 
    "submit": 1, 
    "write": 1
