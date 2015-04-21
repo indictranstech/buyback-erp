@@ -56,7 +56,7 @@ erpnext.buying.PurchaseOrderController = erpnext.buying.BuyingController.extend(
 	//new code on 4th march for hiding make purchase receipt custom button
 	make_purchase_receipt: function(doc, cdt, cdn) {
 		var me=this
-		console.log("in the make_purchase_receipt")
+		// console.log("in the make_purchase_receipt")
 		return frappe.call({
 			method: "erpnext.buying.doctype.purchase_order.purchase_order.make_purchase_receipt",
 			args: {

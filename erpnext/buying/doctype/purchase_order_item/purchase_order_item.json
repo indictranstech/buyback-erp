@@ -61,6 +61,13 @@
    "search_index": 1
   }, 
   {
+   "fieldname": "serial_no", 
+   "fieldtype": "Data", 
+   "label": "Serial No", 
+   "permlevel": 0, 
+   "precision": ""
+  }, 
+  {
    "fieldname": "col_break1", 
    "fieldtype": "Column Break", 
    "permlevel": 0
@@ -445,7 +452,7 @@
  ], 
  "idx": 1, 
  "istable": 1, 
- "modified": "2015-02-10 08:48:02.283719", 
+ "modified": "2015-04-21 08:29:20.943579", 
  "modified_by": "Administrator", 
  "module": "Buying", 
  "name": "Purchase Order Item", 

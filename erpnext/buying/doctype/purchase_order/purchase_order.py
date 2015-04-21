@@ -265,6 +265,7 @@ def new_purchase_receipt(source_name,target_doc=None):
 				"name": "prevdoc_detail_docname",
 				"parent": "prevdoc_docname",
 				"parenttype": "prevdoc_doctype",
+				"serial_no":"serial_no",
 			},
 			"postprocess": update_item,
 			"condition": lambda doc: doc.received_qty < doc.qty
