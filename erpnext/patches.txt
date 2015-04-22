@@ -93,3 +93,5 @@ erpnext.patches.v4_2.recalculate_bom_costs
 erpnext.patches.v4_2.discount_amount
 erpnext.patches.v4_2.update_landed_cost_voucher
 erpnext.patches.v4_2.set_item_has_batch
+execute:frappe.db.sql("""UPDATE `tabPurchase Order Item` poi INNER JOIN `tabPurchase Order` po 
+ON poi.parent=po.name SET  poi.serial_no=po.imei_number where po.imei_number is not null;""")
