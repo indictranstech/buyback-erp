@@ -20,6 +20,9 @@ def execute(filters=None):
 		_("Selling Amount") + ":Currency", _("Buying Amount") + ":Currency",
 		_("Gross Profit") + ":Currency", _("Gross Profit %") + ":Percent", _("Project") + ":Link/Project"]
 	data = []
+	sum_buying_amount=0.0
+	sum_selling_amount=0.0
+	sum_gross_profit=0.0
 	for row in source:
 		selling_amount = flt(row.base_amount)
 
@@ -33,12 +36,17 @@ def execute(filters=None):
 				stock_ledger_entries.get((row.item_code, row.warehouse), []))
 
 		buying_amount = buying_amount > 0 and buying_amount or 0
-
+		
 		gross_profit = selling_amount - buying_amount
 		if selling_amount:
 			gross_profit_percent = (gross_profit / selling_amount) * 100.0
 		else:
 			gross_profit_percent = 0.0
+		# added by pranali for request of summary in gp	
+		sum_buying_amount=sum_buying_amount+buying_amount
+		sum_selling_amount=sum_selling_amount+selling_amount
+		sum_gross_profit=sum_gross_profit+gross_profit
+		#end
 
 		icon = """<a href="%s"><i class="icon icon-share" style="cursor: pointer;"></i></a>""" \
 			% ("/".join(["#Form", row.parenttype, row.name]),)
@@ -46,6 +54,12 @@ def execute(filters=None):
 			row.description, row.warehouse, row.qty, row.base_rate,
 			row.qty and (buying_amount / row.qty) or 0, row.base_amount, buying_amount,
 			gross_profit, gross_profit_percent, row.project])
+	# added by pranali for request of summary in gp	
+	gross_profit_margin=(sum_selling_amount-sum_buying_amount)/sum_selling_amount	
+	data.append(['Summary', '', '', '','','','', '', '', '','', sum_selling_amount, sum_buying_amount,
+		sum_gross_profit,'', ''])
+	data.append(['Average Gross Profit Margin', '', '', '','','','', '', '', '','', '', '',
+		'',flt(gross_profit_margin), ''])
 
 	return columns, data
 
